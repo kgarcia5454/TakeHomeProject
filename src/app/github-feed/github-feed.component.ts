@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild, ViewEncapsulation} from '@angular/core';
+import * as moment from "moment";
 
 @Component({
   selector: 'app-github-feed',
@@ -19,9 +20,11 @@ export class GithubFeedComponent implements OnInit {
           let Author_url = commit.author.html_url;
           let author_Pic = commit.author.avatar_url;
           let Message = commit.commit.message;
+          let Date = (moment(commit.commit.author.date).format('dddd, MMMM D Y'));
           let URL = commit.html_url;
 
-          //Commit Splitter Head and body
+          console.log(Date);
+          //Splits commit message to Head and body
           const messageArray = Message.split("\n\n");
 
           const cardContainer = document.createElement("div");
@@ -37,7 +40,6 @@ export class GithubFeedComponent implements OnInit {
           commitAuthorPic.className = "commit-ProfilePic" ;
           commitAuthorPic.src = author_Pic;
 
-
           const commitAuthor = document.createElement("h3");
           commitAuthor.className = "commit-Author";
           commitAuthor.textContent = Author;
@@ -46,6 +48,10 @@ export class GithubFeedComponent implements OnInit {
           commitAuthorURL.href = Author_url;
           commitAuthorURL.target = "_blank";
           commitAuthorURL.appendChild(commitAuthor);
+
+          const commitDate = document.createElement('h3');
+          commitDate.className = "commit-Date";
+          commitDate.textContent = Date;
 
           const commitHead = document.createElement('p');
           commitHead.className = "commit-Head";
@@ -57,6 +63,7 @@ export class GithubFeedComponent implements OnInit {
 
           cardHeader.appendChild(commitAuthorPic);
           cardHeader.appendChild(commitAuthorURL);
+          cardHeader.appendChild(commitDate);
 
           cardInfo.appendChild(commitHead);
           cardInfo.appendChild(commitBody);
