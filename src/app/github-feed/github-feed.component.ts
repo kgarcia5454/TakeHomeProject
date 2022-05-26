@@ -20,7 +20,7 @@ export class GithubFeedComponent implements OnInit {
           let Author_url = commit.author.html_url;
           let author_Pic = commit.author.avatar_url;
           let Message = commit.commit.message;
-          let Date = (moment(commit.commit.author.date).format('dddd, MMMM D Y'));
+          let Date = (moment(commit.commit.author.date).format('MMMM Do YYYY, h:mm a'));
           let URL = commit.html_url;
 
           console.log(Date);
