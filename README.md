@@ -1,2 +1,1 @@
-# TakeHomeProject
-Web application that shows git commit history for this same repo
+Angular web application that shows commit history of the application. 
