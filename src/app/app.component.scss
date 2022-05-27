@@ -1,4 +1,15 @@
+::ng-deep body {
+  margin: 0;
+  padding: 0;
+}
+
+
+html{
+  height: 100%;
+  background-image:url("../assets/Background.png");
+}
 body{
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
@@ -6,3 +17,4 @@ body{
 #Feed{
   flex-grow: 1;
 }
+

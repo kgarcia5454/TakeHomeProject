@@ -1,9 +1,18 @@
 nav{
   background-color: black;
+  width: 2.5vw;
   height: 100%;
-  margin-right:0.1vw;
+  border-right: solid;
+  border-color: gray;
 }
 
-nav a{
+nav img{
   display: block;
+
+}
+
+img{
+  width: 2vw;
+  margin-bottom: 1vh;
+  filter: invert(100%);
 }

@@ -1,7 +1,15 @@
+#Container{
+  height: 100vh;
+}
+
 .Cards{
+  background-color: white;
+  width: 80%;
   border-style: solid;
   border-width: 2px;
+  margin-top: 1vh;
   margin-bottom: 1vh;
+  margin-left: 0.5vw;
 }
 
 .CardHeader{
