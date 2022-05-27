@@ -8,9 +8,16 @@ import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
+  onClicked(event: Event){
+    event.stopPropagation();
+    console.log("walter");
+  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

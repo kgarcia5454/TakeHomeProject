@@ -9,7 +9,7 @@ import * as moment from "moment";
 })
 export class GithubFeedComponent implements OnInit {
 
-  @ViewChild('Container') Bup: ElementRef;
+  @ViewChild('Container') Container: ElementRef;
 
   ngOnInit(): void {
     fetch("https://api.github.com/repos/kgarcia5454/TakeHomeProject/commits")
@@ -23,12 +23,22 @@ export class GithubFeedComponent implements OnInit {
           let Date = (moment(commit.commit.author.date).format('MMMM Do YYYY, h:mm a'));
           let URL = commit.html_url;
 
-          console.log(Date);
+
           //Splits commit message to Head and body
           const messageArray = Message.split("\n\n");
 
+
+
           const cardContainer = document.createElement("div");
           cardContainer.className = "Cards";
+
+          if(Message.includes("style:")){
+            cardContainer.id = "style";
+          }
+
+          if(Message.includes("feat:")){
+            cardContainer.id = "feat";
+          }
 
           const cardHeader = document.createElement('div');
           cardHeader.className ="CardHeader";
@@ -72,7 +82,7 @@ export class GithubFeedComponent implements OnInit {
           cardContainer.appendChild(cardInfo);
 
 
-          const commitContainer = this.Bup.nativeElement;
+          const commitContainer = this.Container.nativeElement;
           commitContainer.appendChild(cardContainer);
 
       }
