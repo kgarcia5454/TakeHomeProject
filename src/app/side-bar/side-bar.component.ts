@@ -10,7 +10,7 @@ export class SideBarComponent implements OnInit {
 
   onClicked(event: Event){
     event.stopPropagation();
-    console.log("walter");
+    console.log("Show ALL");
   }
 
   constructor() { }
