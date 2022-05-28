@@ -1,18 +1,16 @@
   <nav>
-    <div class="Option" (click)="onClicked($event)">
+    <div class="Option" (click)="ShowAll()">
       <img src="../../assets/all.png"/>
       <p>ALL</p>
     </div>
-    <div class="Option">
+    <div class="Option" (click)="ShowFeat()">
       <img src="../../assets/star.png"/>
       <p>FEATURES</p>
     </div>
-    <div class="Option" >
+    <div class="Option" (click)="ShowFix()">
       <img src="../../assets/tools.png"/>
       <p>FIXES</p>
     </div>
-
-
   </nav>
 
 

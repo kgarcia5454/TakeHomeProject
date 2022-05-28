@@ -11,6 +11,8 @@ export class GithubFeedComponent implements OnInit {
 
   @ViewChild('Container') Container: ElementRef;
 
+  public Visible: boolean
+
   ngOnInit(): void {
     fetch("https://api.github.com/repos/kgarcia5454/TakeHomeProject/commits")
     .then(response => response.json())
@@ -27,17 +29,15 @@ export class GithubFeedComponent implements OnInit {
           //Splits commit message to Head and body
           const messageArray = Message.split("\n\n");
 
-
-
           const cardContainer = document.createElement("div");
-          cardContainer.className = "Cards";
+          cardContainer.id = "Cards";
 
           if(Message.includes("style:")){
-            cardContainer.id = "style";
+            cardContainer.className = "style";
           }
 
           if(Message.includes("feat:")){
-            cardContainer.id = "feat";
+            cardContainer.className = "feat";
           }
 
           const cardHeader = document.createElement('div');

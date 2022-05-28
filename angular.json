@@ -102,7 +102,9 @@
               "src/styles.css",
               "src/"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js"
+            ]
           }
         }
       }

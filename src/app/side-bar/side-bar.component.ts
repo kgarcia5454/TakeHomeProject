@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild} from '@angular/core';
+import * as $ from 'jquery';
+const feat = document.getElementById("feat");
 
 @Component({
   selector: 'app-side-bar',
@@ -8,16 +10,31 @@ import { Component, OnInit, ViewEncapsulation} from '@angular/core';
 })
 export class SideBarComponent implements OnInit {
 
-  onClicked(event: Event){
-    event.stopPropagation();
-    console.log("Show ALL");
-  }
 
   constructor() { }
 
+
+
   ngOnInit(): void {
+  }
+
+  ShowAll(){
+
+    $(".style").css("display","initial");
+    $(".feat").css("display","initial");
+
+
+  }
+
+  ShowFeat(){
+    $(".style").css("display","none");
+  }
+
+  ShowFix(){
+
   }
 
 
 
 }
+
